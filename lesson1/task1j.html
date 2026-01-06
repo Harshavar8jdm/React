@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>React Basics</title>
+  <style> 
+    body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #b2b2b3;
+  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.time {
+  color: #1d1d1f;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  padding: 24px 48px;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="js-container">
+
+  </div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+  <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+
+
+
+    const container = document.querySelector('.js-container');
+    const root = ReactDOM.createRoot(container);
+    setInterval(() => {
+      const time = dayjs().format('HH:mm:ss');
+      const div = (
+        <div>
+          <p class="time">Current time: {time}</p>
+        </div>
+      );
+      root.render(div)
+    }, 1000);
+
+
+  </script>
+</body>
+
+</html>
